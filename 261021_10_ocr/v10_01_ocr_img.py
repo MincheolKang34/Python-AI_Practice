@@ -32,7 +32,7 @@ brown dog jumped over the lazy fox.
 """
 
 """
-OCR 실행 결과 : 
+OCR 실행 결과(한국어만 설정) : 
 Ｌ스트스때스56<1때
 
 이수진
@@ -45,7 +45,8 @@ OCR 실행 결과 :
 """
 
 """
-OCR 실행 결과 : LARANASKIN
+OCR 실행 결과(한국어+영어 설정) : 
+LARANASKIN
 
 이수진
 
@@ -61,3 +62,9 @@ hello@reallygreatsite.com
 OCR 실행 결과 : 
 """
 ## 2. 다른 OCR과 비교
+import easyocr
+
+reader = easyocr.Reader(["ko", "en"])
+
+result = reader.readtext("261021_10_ocr/input_car.jpg", detail=0)
+print(f"OCR 실행 결과 : {result}")
